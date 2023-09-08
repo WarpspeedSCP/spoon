@@ -1,8 +1,16 @@
-[![Maven Central](https://img.shields.io/maven-central/v/fr.inria.gforge.spoon/spoon-core.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22fr.inria.gforge.spoon%22%20AND%20a%3A%22spoon-core%22)
-[![GHA tests Workflow Status](https://github.com/INRIA/spoon/actions/workflows/tests.yml/badge.svg)](https://github.com/INRIA/spoon/actions/workflows/tests.yml)
-[![Coverage Status](https://coveralls.io/repos/INRIA/spoon/badge.png)](https://coveralls.io/r/INRIA/spoon)
-[![Maintainability Rating](https://sonarqube.ow2.org/api/project_badges/measure?project=fr.inria.gforge.spoon%3Aspoon-core&metric=sqale_rating)](https://sonarqube.ow2.org/dashboard?id=fr.inria.gforge.spoon%3Aspoon-core)
-[![Reproducible Builds](https://img.shields.io/badge/Reproducible_Builds-ok-success?labelColor=1e5b96)](https://github.com/jvm-repo-rebuild/reproducible-central#fr.inria.gforge.spoon:spoon-core)
+This fork of spoon (Let's call it "Spork") is an attempt to address the shortcomings of Spoon's architecture such as inconsistent behaviour of various  and provide a faster, more streamlined API. I aim to accomplish this using custom Tree-Sitter grammars for each java version, and also by converting the code to use Kotlin. While the external API will still be usable via Java, there will be a number of breaking changes. 
+
+These include:
+
+- No more generic type parameters on typed elements
+- Any methods that could return null will be explicity marked
+- The AST structure will be replaced by a Tree-sitter based CST, and Spork's grammar will differ from Spoon's. - This will most certainly break any existing visitors.
+- The CST will be based on a Red-Green tree approach, as used in [Microsoft's Rosetta API](https://ericlippert.com/2012/06/08/red-green-trees/).
+- The current Spoon semantic model is slow and expensive to query; caching is not performed. This will be updated to treat symbol references as elements outside the spoon model, and cache references through an LRU cache before returning to the user.
+- Deprecating the CompilationUnit class.
+- A few other tweaks I haven't figured out yet.
+
+Watch the projects section of this repo for more details!
 
 # Spoon
 
