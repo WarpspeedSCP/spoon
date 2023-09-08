@@ -5,6 +5,7 @@ These include:
 - No more generic type parameters on typed elements
 - Any methods that could return null will be explicity marked
 - The AST structure will be replaced by a Tree-sitter based CST, and Spork's grammar will differ from Spoon's. - This will most certainly break any existing visitors.
+- AST elements will be treated as value types, and will not be duplicated unnecessarily.
 - The CST will be based on a Red-Green tree approach, as used in [Microsoft's Rosetta API](https://ericlippert.com/2012/06/08/red-green-trees/).
 - The current Spoon semantic model is slow and expensive to query; caching is not performed. This will be updated to treat symbol references as elements outside the spoon model, and cache references through an LRU cache before returning to the user.
 - Deprecating the CompilationUnit class.
