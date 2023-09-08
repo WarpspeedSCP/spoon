@@ -1,4 +1,4 @@
-This fork of spoon (Let's call it "Spork") is an attempt to address the shortcomings of Spoon's architecture such as inconsistent behaviour of various  and provide a faster, more streamlined API. I aim to accomplish this using custom Tree-Sitter grammars for each java version, and also by converting the code to use Kotlin. While the external API will still be usable via Java, there will be a number of breaking changes. 
+This fork of spoon (Let's call it "Spork") is an attempt to address the shortcomings of Spoon's architecture such as inconsistent behaviour of various interfaces, and to provide a faster, more streamlined API. I aim to accomplish this using custom Tree-Sitter grammars for each java version, and also by converting the code to use Kotlin. While the external API will still be usable via Java, there will be a number of breaking changes. 
 
 These include:
 
