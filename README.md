@@ -8,7 +8,7 @@ These include:
 - AST elements will be treated as value types, and will not be duplicated unnecessarily.
 - The CST will be based on a Red-Green tree approach, as used in [Microsoft's Rosetta API](https://ericlippert.com/2012/06/08/red-green-trees/).
 - The current Spoon semantic model is slow and expensive to query; caching is not performed. This will be updated to treat symbol references as elements outside the spoon model, and cache references through an LRU cache before returning to the user.
-- Deprecating the CompilationUnit class.
+- Removing the CompilationUnit class.
 - Spoon-control-flow will be moved into spoon-core directly, and the control flow graph will be built at the same time as the CST to immediately provide CFA capabilities. This behaviour can be toggled.
 - Tests will still be written in Java to serve as a way to test Java-kotlin interoperability.
 - A few other tweaks I haven't figured out yet.
